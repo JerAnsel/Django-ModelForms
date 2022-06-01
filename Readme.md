@@ -1,0 +1,1 @@
+This repo contains the code for my medium article on Django forms, which can be found at https://github.com/JerAnsel/DjangoForms.

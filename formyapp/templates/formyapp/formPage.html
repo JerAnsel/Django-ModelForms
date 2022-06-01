@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Rendering with form</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <h1>Rendering with form.as_p</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div>
+        <h1>Rendering Field By Field</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.username.label_tag}}
+            {{form.username}}
+            {{form.flavor.label_tag}}
+            {{form.flavor}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <h1>Pure HTML</h1>
+        <form action="/data_processing_view">
+            {% csrf_token %}
+            <label for="username">Name:</label>
+            <input type="text" name="username" id="username" maxlength="50">
+            <label for="flavor">Favorite Ice Cream Flavor:</label>
+            <input type="text" name="flavor" id="flavor" maxlength="100">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
